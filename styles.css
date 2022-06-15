@@ -1,0 +1,233 @@
+/*resetting deafult values*/
+body, ul, li ,h1, h2, a {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+header {
+  position: fixed;
+  background-color: #f63232;
+  padding: 1px;
+  text-align: center;
+  width: 100%;
+  z-index: 1;  
+  top: 0;
+  left: 0;
+}
+header h1 {
+  color: white;
+  border: 8px solid white;
+  border-radius: 36px;
+  padding: 6px 12px;
+  display: inline-block;
+  margin: 10px;
+}
+
+/*im this case banner is the parrent*/
+.banner {
+  position: relative;
+}
+/*100% of the screnn, in reality banner img is bigger*/
+.banner img {
+  max-width: 100%;
+}
+.banner .welcome {
+ /*position of >welcome will not change with browser size changing
+  position: absolute;
+  left: 0px;
+  top: 100px;*/
+  position: absolute;
+  left: 0px;
+  top: 30%;
+  background-color: #feb614;
+  color: white;
+  padding: 30px;
+}
+.banner h2 {
+  font-size: 73px;
+}
+.banner h2 span {
+  /*bigger than 75px in 1.3 times*/
+  font-size: 1.3em;
+}
+nav {
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: sticky;
+  top: 85px;
+  margin: 80px;
+}
+nav li {
+  width: 25%;
+  display: inline-block;
+  font-size: 24px;
+}
+nav ul {
+  white-space: nowrap;
+  max-width: 1200px;
+  /*this margin will dived left space equal for both sides*/
+  margin: 0 auto;
+}
+nav li a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+nav li a.join {
+  color: #F63232;
+}
+main {
+  max-width: 100%;
+  width: 1200px;
+  margin: 80px auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+article h2 {
+  color: #f63232;
+  font-size: 48px;
+}
+article p {
+  /*it takes the font size of the paragraph tag and times it by 2*/
+  line-height: 2em;
+}
+.images {
+  text-align: center;
+  /*80px - top&bottom, o - left&right*/
+  margin: 80px 0;
+  white-space: nowrap;
+}
+.images li {
+  display: inline-block;
+  width: 40%;
+  margin: 20px 5%;
+}
+.images li img {
+  /*100% from it parent > it's 40%*/
+  max-width: 100%;
+
+}
+section.join {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4b4b4b;
+}
+.join h2 {
+  font-size: 36px;
+}
+form input {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 28px;
+  border: 4px solid white;
+}
+footer {
+  background-color: #f63232;
+  color:  white;
+  padding: 10px;
+  text-align: center;
+  bottom: 0%;
+  width: 100%;
+}
+
+/*========================================pseudo classes===================*/
+
+/*hover effects over links in menu*/
+nav li a:hover {
+  text-decoration: underline;
+  /*background-color: pink;
+  padding: 3px;*/
+}
+.images li:hover {
+  position: relative;
+  top: -4px;
+}
+form input:focus {
+  border: 4px dashed #4b4b4b;
+}
+form input:valid {
+  border: 4px solid #71d300;
+}
+nav li:first-child {
+  border: 3px solid #f63232;
+}
+
+/*===================pseudo elements==============================*/
+article p::first-line {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+section.join p::first-letter {
+  font-size: 1.5em;
+}
+section.join p::selection {
+  /*when text will be selected with a mouse it'll have red background*/
+  background-color: red;
+  color: white;
+}
+p::after {
+  /*this ocntent will be injected after all paragraph tag*/
+  content: '...';
+}
+
+
+/*============================media queries=============================*/
+/*screen means - we target devices with a screen*/
+@media screen and (max-width: 1200px) {
+  /*max-width - styles will be applied to sizes that smaller 
+  than specified here; min-width - for all sizes that 
+  bigger than speficied here*/
+  .banner .welcome h2 {
+    font-size: 60px;
+}
+  nav li {
+    font-size: 18px;
+  }
+}
+/*than manually check wich size in browser is broking website 
+look and set next media query, ctrl+c & ctrl+v previuos block*/
+@media screen and (max-width: 900px) {
+  .banner .welcome h2 {
+    font-size: 40px;
+}
+  nav li {
+    font-size: 18px;
+  }
+}
+  @media screen and (max-width: 700px) {
+    .banner .welcome {
+    position: relative;
+    text-align: center;
+    padding: 2px;
+  }
+  .banner .welcome br {
+    display: none;
+  }
+  .banner .welcome h2 {
+    font-size: 25px;
+  }
+  .banner .welcome span {
+    font-size: 1em;   /*as a parent size, one block above*/
+  }
+  .images li {
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+  }
+}
+@media screen and (max-width: 615px) {
+  nav li {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+  }
+  header {
+    position: relative;
+  }
+  nav {
+    top: 0;
+  } 
+  
+}
