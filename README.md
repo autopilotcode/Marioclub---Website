@@ -1,4 +1,4 @@
-# basics of  CSS & HTML
+# Basics of  CSS & HTML
 
 #### Marioclub Website
 
