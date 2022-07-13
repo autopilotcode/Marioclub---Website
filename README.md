@@ -1,7 +1,7 @@
-# Basics of  CSS & HTML
+# Very Basics of  CSS & HTML
 
 #### Marioclub Website
 
-online free course from The Net Ninja
+built during online free course from _'The Net Ninja'_ on YouTube
 
 [link to the course](https://www.youtube.com/watch?v=hu-q2zYwEYs)
